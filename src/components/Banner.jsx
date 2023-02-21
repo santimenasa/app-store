@@ -1,41 +1,51 @@
 import React, { useEffect, useState } from "react";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+
 import axios from "axios";
 
 const Banner = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-const [image, setImage] = useState('')
+  const [index, setIndex] = useState(0);
+  const [image, setImage] = useState("");
   async function getHandler() {
     const response = await axios.get("https://fakestoreapi.com/products");
     try {
       const images = response.data.map((item, i) => item.image);
-      //console.log(images);
-      setImage(images[0])
+      setImage(images);
     } catch (error) {
       console.log(error);
     }
   }
-  getHandler() 
-//console.log(image);
-const sliderStyle = {
-  
-  height:"400px",
-  position: "relative"
-}
-const slideStyles = {
-  width:"15%",
-  height:"100%",
-  margin: "0 auto",
-  marginTop:"5%",
-  borderRaius: "10px",
-  backgroundPosition: "center",
-  backgroundSize: "cover",
-  backgroundImage: `url(${image})`
-}
+
+  function nextItem() {
+    if (index < 19) {
+      setIndex(index + 1);
+    } else {
+      setIndex(0);
+    }
+  }
+  function prevItem() {
+    if (index > 0) {
+      setIndex(index - 1);
+    } else {
+      setIndex(19);
+    }
+  }
+  useEffect(() => {
+    getHandler();
+  }, [0]);
+  console.log(index);
   return (
-    <div className="slider" style={sliderStyle}>
-      <div className="arrowLeft"></div>
-      <div className="arrowRight"></div>
-      <div style={slideStyles}></div>
+    <div className="banner">
+      <button onClick={nextItem} className="nextItem">
+        <KeyboardDoubleArrowRightIcon />
+      </button>
+      <div className="banner-inner">
+        <img src={image[index]} alt="" className="imagen" />
+      </div>
+      <button onClick={prevItem} className="prevItem">
+        <KeyboardDoubleArrowLeftIcon />
+      </button>
     </div>
   );
 };

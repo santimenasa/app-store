@@ -4,7 +4,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className="navBar">
-      <AppBar position="sticky" color="primary">
+      <AppBar position="sticky" color="primary" >
         <Toolbar>
           <Tabs >
             <Tab textColor="primary" label="About Us"/>

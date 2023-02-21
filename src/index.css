@@ -8,3 +8,37 @@
     justify-content: end;
    
 } 
+.banner{
+    width: 50rem;
+    height: 20rem;
+    background-color: black;
+   margin-left: 28%;
+  margin-top: 2em;
+
+}
+.banner-inner{
+    height: 100%;
+    width: 100%;
+ 
+}
+.imagen{
+  width: 45%;
+  height: 100%;
+ margin-left: 25%;
+ margin-bottom: 80%;
+ border-radius: 3em;
+}
+.nextItem{
+    height: 3em;
+    width: 5em;
+    position: relative;
+    left: 100%;
+    top: 50%;
+}
+.prevItem{
+    height: 3em;
+    width: 5em;
+    position: relative;
+    bottom: 62%;
+    right: 8%;
+}
