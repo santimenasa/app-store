@@ -1,11 +1,65 @@
-import React from 'react'
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { Grid } from "@mui/material";
 
-const Product = () => {
+export default function Product(props) {
   return (
-    <div>
-      
-    </div>
-  )
+    <Grid item xs="auto">
+      <Card sx={{ maxWidth: 345 }}>
+        <CardMedia
+          sx={{ height: 140 }}
+          image={props.image}
+          style={{
+            objectFit: "cover",
+            width: "20em",
+            height: "28em"
+          }}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {props.category}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {props.title}
+          </Typography>
+
+          <Typography variant="inherit" color="text.secondary">
+            Price: {props.price} $
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Buy</Button>
+        </CardActions>
+      </Card>
+      </Grid>
+  );
 }
 
-export default Product
+/* import React from "react";
+
+const Product = (props) => {
+  console.log(props);
+  return (
+    <div className="card-container">
+      <div className="card">
+        <div className="image-container">
+          <img className="card-img" src={props.image} alt="" />
+        </div>
+        <div className="content">
+          <h3>{props.title}</h3>
+          <p>Price:{props.price}</p>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Product;
+
+ */

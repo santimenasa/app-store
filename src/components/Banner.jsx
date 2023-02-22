@@ -7,16 +7,18 @@ import axios from "axios";
 const Banner = () => {
   const [index, setIndex] = useState(0);
   const [image, setImage] = useState("");
-  async function getHandler() {
-    const response = await axios.get("https://fakestoreapi.com/products");
-    try {
-      const images = response.data.map((item, i) => item.image);
-      setImage(images);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    async function getHandler() {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      try {
+        const images = response.data.map((item, i) => item.image);
+        setImage(images);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
-
+    getHandler();
+  }, []);
   function nextItem() {
     if (index < 19) {
       setIndex(index + 1);
@@ -31,9 +33,7 @@ const Banner = () => {
       setIndex(19);
     }
   }
-  useEffect(() => {
-    getHandler();
-  }, [0]);
+
   console.log(index);
   return (
     <div className="banner">
