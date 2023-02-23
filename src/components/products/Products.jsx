@@ -26,13 +26,13 @@ const Products = () => {
   
     
     >
-      {cards.map((product) => (
+      {cards.map((item) => (
         <Product
-          key={product.id}
-          title={product.title}
-          image={product.image}
-          price={product.price}
-          category={product.category}
+          key={item.id}
+          title={item.title}
+          image={item.image}
+          price={item.price}
+          category={item.category}
         />
       ))}
     </Grid>

@@ -17,7 +17,8 @@ export default function Product(props) {
           style={{
             objectFit: "cover",
             width: "20em",
-            height: "28em"
+            height: "28em",
+     
           }}
         />
         <CardContent>
