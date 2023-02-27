@@ -15,28 +15,51 @@ const Products = () => {
   }, []);
 
   console.log(cards);
-
+  const [searchTerm, setSearchTerm] = useState("");
   return (
-    <div className="products">
-    <Grid
-    container spacing={3}
-    direction="row"
-    justifyContent="space-between"
-    alignItems="center"
-  
-    
-    >
-      {cards.map((product) => (
-        <Product
-          key={product.id}
-          title={product.title}
-          image={product.image}
-          price={product.price}
-          category={product.category}
+    <>
+    <div className='filter'>
+     <span className="input-span">
+        <input
+          className="input"
+          type={"text"}
+          placeholder={`Product`}
+          onChange={(event) => setSearchTerm(event.target.value)}
         />
-      ))}
-    </Grid>
+      </span>
+         </div>
+    <div className="products">
+      <Grid
+        container
+        spacing={3}
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        {cards
+                .filter((val) => {
+                  if (!searchTerm) {
+                    return val;
+                  } else if (
+                    val.title
+                      .toLocaleLowerCase()
+                      .includes(searchTerm.toLocaleLowerCase())
+                  ) {
+                    return val;
+                  }
+                })
+        .map((product) => (
+          <Product
+            key={product.id}
+            title={product.title}
+            image={product.image}
+            price={product.price}
+            category={product.category}
+          />
+        ))}
+      </Grid>
     </div>
+    </>
   );
 };
 

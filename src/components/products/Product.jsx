@@ -22,10 +22,10 @@ export default function Product(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {props.category}
+            {props.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {props.title}
+            {props.category}
           </Typography>
 
           <Typography variant="inherit" color="text.secondary">
@@ -36,30 +36,7 @@ export default function Product(props) {
           <Button size="small">Buy</Button>
         </CardActions>
       </Card>
-      </Grid>
+    </Grid>
   );
 }
 
-/* import React from "react";
-
-const Product = (props) => {
-  console.log(props);
-  return (
-    <div className="card-container">
-      <div className="card">
-        <div className="image-container">
-          <img className="card-img" src={props.image} alt="" />
-        </div>
-        <div className="content">
-          <h3>{props.title}</h3>
-          <p>Price:{props.price}</p>
-          <button>Comprar</button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Product;
-
- */
