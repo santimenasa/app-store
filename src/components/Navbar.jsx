@@ -1,7 +1,7 @@
 import { AppBar, Tab, Tabs, Toolbar } from "@mui/material";
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import React from "react";
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className="navBar">
@@ -9,8 +9,8 @@ const Navbar = () => {
         <Toolbar>
           <StorefrontIcon sx={{fontSize : "4em"}}/>
           <Tabs sx={{ml: "80%"}}>
-            <Tab textColor="primary" label="About Us"/>
-            <Tab textColor="primary" label="Products"/>
+           <Link to="/About"><Tab textColor="primary" label="About Us"/></Link> 
+           <Link to="/products"><Tab textColor="primary" label="Products"/></Link> 
             <Tab textColor="primary" label="Home"/>
           </Tabs>
         </Toolbar>
