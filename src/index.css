@@ -1,62 +1,72 @@
- *{
-    margin: 0%;
-    padding: 0%;
+* {
+  margin: 0%;
+  padding: 0%;
 }
-.navBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-   
-} 
-.banner{
-    width: 50rem;
-    height: 20rem;
-    background-color: black;
-   margin-left: 28%;
-  margin-top: 2em;
-
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 }
-.banner-inner{
-    height: 100%;
-    width: 100%;
+.banner {
+  width: 50rem;
+  height: 20rem;
+  margin-left: 28%;
+  position: relative;
+}
+.banner-inner {
+  height: 100%;
+  width: 100%;
+  background-color: #edf6f9;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  bottom: 50%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.imagen {
+    position: absolute;
+ left: 37%;
+ top: 12%;
+  max-width: 80%;
+  max-height: 80%;
+}
+.nextItem {
+  height: 3em;
+  width: 5em;
+ position: absolute;
+ top: 70%;
+ left: 72.5em;
  
 }
-.imagen{
-  width: 45%;
-  height: 100%;
- margin-left: 25%;
- margin-bottom: 80%;
- border-radius: 3em;
+.prevItem {
+  height: 3em;
+  width: 5em;
+  position: absolute;
+  top: 14em;
+  left: 17.5em;
 }
-.nextItem{
-    height: 3em;
-    width: 5em;
-    position: relative;
-    left: 100%;
-    top: 50%;
-}
-.prevItem{
-    height: 3em;
-    width: 5em;
-    position: relative;
-    bottom: 62%;
-    right: 8%;
-}
-.products{
-    margin-top: 8rem;
-    background-color: red;
-    margin-left: 5rem;
-    margin-right: 5rem;
+.products {
+  margin-top: 2rem;
+  background-color: #edf6f9;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
-
-
-.filter{
-    background-color: blue;
-    margin-top: 3em;
-    padding: 6em;
+.filter {
+  background-color: #006d77;
+  padding: 6em;
+  position: relative;
 }
-
-
-
-
+.input-span {
+  position: absolute;
+  left: 45%;
+  top: 5em;
+}
+main {
+  width: 100vh;
+  height: 100vh;
+}
+#root {
+  background-color: #ffddd2;
+}

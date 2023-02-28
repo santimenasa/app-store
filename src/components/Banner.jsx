@@ -40,12 +40,13 @@ const Banner = () => {
       <button onClick={nextItem} className="nextItem">
         <KeyboardDoubleArrowRightIcon />
       </button>
-      <div className="banner-inner">
-        <img src={image[index]} alt="" className="imagen" />
-      </div>
       <button onClick={prevItem} className="prevItem">
         <KeyboardDoubleArrowLeftIcon />
       </button>
+      <div className="banner-inner">
+        <img src={image[index]} alt="" className="imagen" />
+      </div>
+  
     </div>
   );
 };

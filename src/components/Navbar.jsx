@@ -11,7 +11,7 @@ const Navbar = () => {
           <Tabs sx={{ml: "80%"}}>
            <Link to="/About"><Tab textColor="primary" label="About Us"/></Link> 
            <Link to="/products"><Tab textColor="primary" label="Products"/></Link> 
-            <Tab textColor="primary" label="Home"/>
+           <Link to="/"> <Tab textColor="primary" label="Home"/></Link>
           </Tabs>
         </Toolbar>
       </AppBar>
